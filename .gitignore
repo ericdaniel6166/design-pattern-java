@@ -17,3 +17,6 @@ _site/
 !petclinic.css
 /00_not_commit/
 /not_commit/
+**/test/
+**/Test/
+/out/

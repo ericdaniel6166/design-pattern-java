@@ -60,54 +60,60 @@ public class Solution {
     }
 
     public static class Voucher {
-        Drink drink;
-        Food food;
+        private VoucherAbstractFactory factory;
 
-        public Voucher(Drink drink, Food food) {
-            this.drink = drink;
-            this.food = food;
+        public Voucher(VoucherAbstractFactory factory) {
+            this.factory = factory;
         }
 
         @Override
         public String toString() {
             return "Voucher{" +
-                    "drink=" + drink +
-                    ", food=" + food +
+                    "drink=" + factory.createDrink() +
+                    ", food=" + factory.createFood() +
                     '}';
         }
     }
 
     public interface VoucherAbstractFactory {
-        Drink getDrink();
-        Food getFood();
+        Drink createDrink();
+        Food createFood();
 
     }
 
     public static class MorningVoucherFactory implements VoucherAbstractFactory {
         @Override
-        public Drink getDrink() {
+        public Drink createDrink() {
             return new Coffee();
         }
 
+        //???
+//        @Override
+//        public Coffee createDrink() {
+//            return new Coffee();
+//        }
+
+
+
         @Override
-        public Food getFood() {
+        public Food createFood() {
             return new Cake();
         }
     }
 
     public static class EveningVoucherFactory implements VoucherAbstractFactory {
         @Override
-        public Drink getDrink() {
+        public Drink createDrink() {
             return new Beer();
         }
 
         @Override
-        public Food getFood() {
+        public Food createFood() {
             return new GrilledOctopus();
         }
     }
 
-    public static VoucherAbstractFactory getVoucherFactory(String campaignName) {
+    public static VoucherAbstractFactory createVoucherFactory(String campaignName) {
         if ("creative morning".equalsIgnoreCase(campaignName)) {
             return new MorningVoucherFactory();
         }
@@ -117,15 +123,10 @@ public class Solution {
         throw new IllegalArgumentException(String.format("campaign not found, campaign name: %s", campaignName));
     }
 
-    public static Voucher getVoucher(VoucherAbstractFactory voucherAbstractFactory) {
-        return new Voucher(voucherAbstractFactory.getDrink(), voucherAbstractFactory.getFood());
-
-    }
-
     public static void main(String[] args) {
         System.out.println(List.of(
-                getVoucher(getVoucherFactory("creative morning")),
-                getVoucher(getVoucherFactory("chill all night long"))
+                new Voucher(createVoucherFactory("creative morning")),
+                new Voucher(createVoucherFactory("chill all night long"))
         ));
 
     }

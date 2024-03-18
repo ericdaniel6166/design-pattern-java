@@ -60,8 +60,8 @@ public class Problem {
     }
 
     public static class Voucher {
-        Drink drink;
-        Food food;
+        private Drink drink;
+        private Food food;
 
         public Voucher(Drink drink, Food food) {
             this.drink = drink;

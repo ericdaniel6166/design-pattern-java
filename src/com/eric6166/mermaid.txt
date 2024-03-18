@@ -1,0 +1,7 @@
+..|>: implementation/realization
+-->: association
+--o: aggregation
+..>: dependency
+--|>: inheritance
+--*: composition
+

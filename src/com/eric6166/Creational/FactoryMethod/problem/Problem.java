@@ -3,7 +3,7 @@ package com.eric6166.Creational.FactoryMethod.problem;
 
 public class Problem {
     public static class NotificationService {
-        Notifier notifier;
+        private Notifier notifier;
 
         public NotificationService(Notifier notifier) {
             this.notifier = notifier;
@@ -33,18 +33,29 @@ public class Problem {
         }
     }
 
-    public static void main(String[] args) {
-
+    public static Notifier createNotifier(String type) {
         // problem: I don't want my users to init a new notifier like this.
         // They should call to something to produce a notifier with its specific type
         // createNotifier(type) Notifier
-        // ex: I only want this system to handle only email and sms
 
-        var sms = new NotificationService(new SMSNotifier());
+        if ("email".equalsIgnoreCase(type)) {
+            return new EmailNotifier();
+        }
+        if ("sms".equalsIgnoreCase(type)) {
+            return new SMSNotifier();
+        }
+        throw new IllegalArgumentException(String.format("wrong type for Notifier, type: %s", type));
+    }
+
+    public static void main(String[] args) {
+
+        var sms = new NotificationService(createNotifier("sms"));
         sms.sendNotification("Hello world");
 
-        var email = new NotificationService(new EmailNotifier());
+        var email = new NotificationService(createNotifier("email"));
         email.sendNotification("Hello world");
+
+        var wrongType = new NotificationService(createNotifier("wrongType"));
 
 
     }

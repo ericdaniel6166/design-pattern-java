@@ -2,7 +2,7 @@ package com.eric6166.Behavioral.Strategy.Solution;
 
 public class Solution {
     public static class NotificationService {
-        Notifier notifier;
+        private Notifier notifier;
 
         public NotificationService(Notifier notifier) {
             this.notifier = notifier;
@@ -31,12 +31,24 @@ public class Solution {
         }
     }
 
+    public static Notifier createNotifier(String type) {
+        if ("email".equalsIgnoreCase(type)) {
+            return new EmailNotifier();
+        }
+        if ("sms".equalsIgnoreCase(type)) {
+            return new SMSNotifier();
+        }
+        throw new IllegalArgumentException(String.format("wrong type for Notifier, type: %s", type));
+    }
+
     public static void main(String[] args) {
-        var sms = new NotificationService(new SMSNotifier());
+        var sms = new NotificationService(createNotifier("sms"));
         sms.sendNotification("Hello world");
 
-        var email = new NotificationService(new EmailNotifier());
+        var email = new NotificationService(createNotifier("email"));
         email.sendNotification("Hello world");
+
+        var wrongType = new NotificationService(createNotifier("wrongType"));
 
 
     }

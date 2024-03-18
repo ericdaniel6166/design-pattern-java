@@ -3,12 +3,11 @@ package com.eric6166.Behavioral.Strategy.Problem;
 public class Problem {
 
     public static class NotificationService {
-        String type;
+        private String type;
 
         public NotificationService(String type) {
             this.type = type;
         }
-
 
         public void sendNotification(String message) {
             if ("email".equalsIgnoreCase(type)) {

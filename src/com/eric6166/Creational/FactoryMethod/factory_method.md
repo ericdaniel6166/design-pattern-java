@@ -35,6 +35,7 @@ classDiagram
     
 ```
 
+Solution
 ```mermaid
 classDiagram
     class NotificationService {

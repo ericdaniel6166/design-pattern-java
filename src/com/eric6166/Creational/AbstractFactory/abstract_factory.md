@@ -71,6 +71,7 @@ classDiagram
         
     }
     Voucher o--> VoucherAbstractFactory
+    MorningVoucherFactory ..|> VoucherAbstractFactory
     
     class MorningVoucherFactory {
         +Coffee createDrink()
@@ -84,10 +85,10 @@ classDiagram
     
     MorningVoucherFactory ..> Coffee
     EveningVoucherFactory ..> Beer
-    MorningVoucherFactory ..|> VoucherAbstractFactory
-    EveningVoucherFactory ..|> VoucherAbstractFactory
     
     MorningVoucherFactory ..> Cake
+    EveningVoucherFactory ..|> VoucherAbstractFactory
+    
     EveningVoucherFactory ..> GrilledOctopus
     
     

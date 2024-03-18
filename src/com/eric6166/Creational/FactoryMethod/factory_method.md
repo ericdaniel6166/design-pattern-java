@@ -67,4 +67,5 @@ classDiagram
 ```
 
 NotifierCreator -> interface?
+
 +NotificationService(Notifier notifier) -> +NotificationService(NotifierCreator notifierCreator)?

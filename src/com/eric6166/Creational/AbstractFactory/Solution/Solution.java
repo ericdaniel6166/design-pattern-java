@@ -1,4 +1,4 @@
-package com.eric6166.Creational.AbstractFactory.solution;
+package com.eric6166.Creational.AbstractFactory.Solution;
 
 import java.util.List;
 

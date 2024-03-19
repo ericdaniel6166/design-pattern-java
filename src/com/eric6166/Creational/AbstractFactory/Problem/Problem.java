@@ -1,4 +1,4 @@
-package com.eric6166.Creational.AbstractFactory.problem;
+package com.eric6166.Creational.AbstractFactory.Problem;
 
 import java.util.List;
 

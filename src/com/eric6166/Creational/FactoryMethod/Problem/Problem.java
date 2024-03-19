@@ -1,4 +1,4 @@
-package com.eric6166.Creational.FactoryMethod.problem;
+package com.eric6166.Creational.FactoryMethod.Problem;
 
 
 public class Problem {

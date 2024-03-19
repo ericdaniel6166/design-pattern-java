@@ -101,9 +101,10 @@ classDiagram
 ```
 ```text
 doSomething()
-
+...
 Drink drink = factory.createDrink()
 Food food = factory.createFood()
+...
 ```
 
 public Drink createDrink() {

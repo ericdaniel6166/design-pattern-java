@@ -9,6 +9,7 @@ public class Problem {
             System.out.println("- Fetch url content");
             System.out.println("- Extract information from content");
             System.out.println("- Save information to database");
+            // problem: new logic -> modify crawl()
         }
     }
 

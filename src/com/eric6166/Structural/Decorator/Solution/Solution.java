@@ -68,11 +68,11 @@ public class Solution {
 
     }
 
-    public static NotifierDecorator createNotifierDecorator(String firstType, String... nextTypes) {
-        NotifierDecorator decorator = new NotifierDecorator(createNotifier(firstType));
-        if (nextTypes != null && nextTypes.length > 0) {
-            for (var nextType: nextTypes) {
-                decorator = decorator.decorate(createNotifier(nextType));
+    public static NotifierDecorator createNotifierDecorator(String first, String... types) {
+        NotifierDecorator decorator = new NotifierDecorator(createNotifier(first));
+        if (types != null && types.length > 0) {
+            for (var nextInType: types) {
+                decorator = decorator.decorate(createNotifier(nextInType));
             }
         }
         return decorator;

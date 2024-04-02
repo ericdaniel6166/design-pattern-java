@@ -20,3 +20,4 @@ _site/
 **/test/
 **/Test/
 /out/
+**/desktop.ini

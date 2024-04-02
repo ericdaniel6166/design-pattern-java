@@ -2,6 +2,8 @@
 
 #chain_of_responsibility
 
+#(aka: CoR, Chain of Command)
+
 Chain of Responsibility 
 is a behavioral design pattern 
 that lets you pass requests

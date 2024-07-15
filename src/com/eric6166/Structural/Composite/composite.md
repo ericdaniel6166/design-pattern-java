@@ -2,7 +2,12 @@
 
 #composite
 
-Composite is a structural design pattern 
+#(aka: Object Tree)
+
+#05
+
+Composite 
+is a structural design pattern 
 that lets you compose objects 
 into tree structures 
 and then work with these structures 

@@ -2,6 +2,8 @@
 
 #strategy
 
+#01
+
 Strategy
 is a behavioral design pattern
 that lets you define a family of algorithms,

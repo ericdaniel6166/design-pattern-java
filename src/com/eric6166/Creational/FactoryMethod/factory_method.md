@@ -2,6 +2,10 @@
 
 #factory_method
 
+#(aka: virtual constructor)
+
+#02
+
 Factory Method
 is a creational design pattern
 that provides an interface

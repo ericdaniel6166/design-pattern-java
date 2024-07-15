@@ -1,0 +1,52 @@
+#design_pattern
+---------------------
+#behavioral
+
+#strategy
+
+Strategy
+is a behavioral design pattern,
+that let you define a family of algorithms
+---
+#creational
+
+#factory_method
+
+Factory Method
+(aka: Visual Constructor)
+is a creational design pattern,
+that provides an interface
+for creating objects in super class
+---
+#creational
+
+#abstract_factory
+
+Abstract Factory
+is a creational design pattern,
+that let you produce
+families of related objects
+---------------------
+#structural
+
+#composite
+
+Composite
+(aka: Object Tree)
+is a structural design pattern,
+that let you compose objects
+into tree structures
+---
+#structural
+
+#decorator
+(aka: wrapper)
+is a structural design pattern,
+that let you attach new behavior
+to object by place objects
+inside
+
+
+
+---------------------
+

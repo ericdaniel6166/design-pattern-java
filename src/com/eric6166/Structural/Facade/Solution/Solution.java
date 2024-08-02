@@ -124,8 +124,6 @@ public class Solution {
             var account = accountStorage.lookup(accountName);
             return account.getBalance();
         }
-
-
     }
 
     public static void main(String[] args) throws Exception {
@@ -135,17 +133,22 @@ public class Solution {
                         new Product("Orange", 3.0)
                 )),
                 new AccountStorage(List.of(
-                        new Account("VIP", 1000d),
+                        new Account("VIP", 1000.0),
                         new Account("Economic", 300d)
-
                 ))
-
         );
 
-        var productName = "Apple";
-        var accountName = "VIP";
+        // 1. Buy product and check balance
 
-        facadeService.buyProduct(productName, accountName);
-        System.out.println(String.format("account name: %s, balance: %s", accountName, facadeService.fetchBalance(accountName)));;
+        var productName = "Apple";
+        var vipAccount = "VIP";
+
+        facadeService.buyProduct(productName, vipAccount);
+        System.out.println(String.format("account name: %s, balance: %s", vipAccount, facadeService.fetchBalance(vipAccount)));;
+
+        // 2. Deposit and check balance
+        String economicAccount = "Economic";
+        facadeService.deposit(100.0, economicAccount);
+        System.out.println(String.format("account name: %s, balance: %s", economicAccount, facadeService.fetchBalance(economicAccount)));;
     }
 }

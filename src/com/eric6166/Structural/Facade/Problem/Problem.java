@@ -51,7 +51,10 @@ public class Problem {
             balance += money;
         }
 
-        public void withdraw(Double money) {
+        public void withdraw(Double money) throws Exception {
+            if (balance < money) {
+                throw new Exception("not enough balance in account");
+            }
             balance -= money;
         }
 
@@ -103,8 +106,8 @@ public class Problem {
         ));
 
         var accountStorage = new AccountStorage(List.of(
-                new Account("VIP", 1000d),
-                new Account("Economic", 300d)
+                new Account("VIP", 1000.0),
+                new Account("Economic", 300.0)
 
         ));
 
@@ -118,6 +121,9 @@ public class Problem {
         account.withdraw(product.getPrice());
 
         System.out.println(String.format("accountStorage: %s", accountStorage));
+
+        // Problem: Problem if adding more steps to buying process,
+        // There are too many steps, not sure if I do correctly
     }
 
 

@@ -109,16 +109,4 @@ Food food = factory.createFood()
 ...
 ```
 
-public Drink createDrink() {
-return new Coffee();
-}
-
-or
-
-public Coffee createDrink() {
-return new Coffee();
-}
-
-
-???
 

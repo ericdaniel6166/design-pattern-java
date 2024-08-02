@@ -69,7 +69,3 @@ classDiagram
     SMSNotifierCreator --|> NotifierCreator
     EmailNotifierCreator --|> NotifierCreator
 ```
-
-NotifierCreator -> interface?
-
-+NotificationService(Notifier notifier) -> +NotificationService(NotifierCreator notifierCreator)?

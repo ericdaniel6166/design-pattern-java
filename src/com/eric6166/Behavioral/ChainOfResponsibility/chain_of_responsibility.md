@@ -5,6 +5,9 @@
 #(aka: CoR, Chain of Command)
 
 Chain of Responsibility 
+
+(aka: CoR, Chain of Command)
+
 is a behavioral design pattern 
 that lets you pass requests
 along a chain of handlers. 

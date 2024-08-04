@@ -134,7 +134,7 @@ public class Solution {
                 )),
                 new AccountStorage(List.of(
                         new Account("VIP", 1000.0),
-                        new Account("Economic", 300d)
+                        new Account("Economic", 300.0)
                 ))
         );
 

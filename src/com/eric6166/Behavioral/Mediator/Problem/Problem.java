@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Problem {
-
     public static class User {
         private String name;
         private List<User> contacts;
@@ -46,5 +45,4 @@ public class Problem {
         john.sendMessage("Hello everyone!");
         jane.sendMessage("Hi John!");
     }
-
 }
